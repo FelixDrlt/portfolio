@@ -1,5 +1,25 @@
+:root{
+    --background:#FFFCFC;
+    --ui-backgroung:#FEEBEC;
+    --ui-hover:#FFDBDC;
+    --ui-active:#FFCDCE;
+    --border:#FDBDBE;
+    --ui-border:#F4A9AA;
+    --ui-over-border:#EB8E90;
+    --low-text:#CE2C31;
+    --high-text:#641723;
+}
+
+p{
+    color: var(--low-text);
+}
+
+h1{
+    color: var(--high-text);
+}
+
 body{
-    background-color: #7e09cc;
+    background-color: var(--background);
     margin: 0px;
     padding: 0px;
 }
@@ -8,7 +28,6 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(0, 255, 242);
     position: fixed;
     top: 0;
     left: 0;
@@ -32,4 +51,19 @@ nav{
 
 .titreAccueil{
     margin-top: 300px;
+}
+
+summary{
+    list-style: none;
+    cursor: pointer;
+    color: var(--high-text);
+}
+
+.icon {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+details[open] summary .icon {
+    transform: rotate(45deg);
 }
