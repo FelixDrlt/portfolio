@@ -396,9 +396,6 @@ summary {
     align-items: center;
 }
 
-summary::-webkit-details-marker {
-    display: none;              /* Sécurité pour masquer la flèche sur Safari/Chrome */
-}
 
 /* Le bloc de texte qui se dévoile */
 details p {
