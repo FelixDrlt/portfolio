@@ -10,6 +10,8 @@
     --high-text:#641723;
 }
 
+
+
 .name-title{
     margin-top: ;
     font-size: 38;
@@ -122,10 +124,6 @@ nav img {
 
 .menu li a:hover {
     color: var(--low-text);
-}
-
-.titreAccueil{
-    margin-top: 300px;
 }
 
 summary{
@@ -331,7 +329,198 @@ details[open] summary .icon {
     padding: 3rem 2rem;
 }
 
-/* Comme tu as une grande photo maintenant, on réduit la marge du "À propos" */
-.titreAccueil {
-    margin-top: 0px !important; 
+/* Titre de la section */
+.section-title {
+    font-size: 2rem;
+    color: var(--high-text);
+    margin-bottom: 1.5rem;
+}
+
+/* --- 2. TITRES ET PARAGRAPHE DE PRÉSENTATION --- */
+h1.titreAccueil, 
+main > h1 {
+    font-size: 1.8rem;
+    color: var(--high-text);
+    border-bottom: 2px solid var(--ui-backgroung); /* Fine ligne de séparation moderne */
+    padding-bottom: 8px;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+main > p {
+    color: var(--high-text);    /* Utilise le bordeaux sombre, beaucoup plus doux pour les yeux */
+    font-size: 1.15rem;
+    line-height: 1.6;           /* Augmente l'espace entre les lignes pour une lecture fluide */
+    margin-bottom: 2.5rem;
+}
+
+/* --- 3. SECTIONS FORMATIONS ET EXPÉRIENCES (CRÉATION DE CARTES ÉPURÉES) --- */
+main ul {
+    list-style: none;           /* Enlève les puces rondes par défaut */
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                  /* Espace régulier entre chaque élément de la liste */
+}
+
+main li {
+    background-color: var(--background);
+    color: var(--high-text);
+    border: 1px solid var(--border); /* Légère bordure fine */
+    border-radius: 8px;         /* Angles arrondis modernes */
+    padding: 14px 20px;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 4px rgba(100, 23, 35, 0.02); /* Micro-ombre bordeaux très discrète */
+}
+
+/* --- 4. ACCORDÉON MODERNE POUR LE MENU VACUA (<details>) --- */
+details {
+    background-color: var(--ui-backgroung); /* Fond rose/blanc cassé ultra doux */
+    border: 1px solid var(--ui-border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* La barre cliquable */
+summary {
+    padding: 14px 20px;
+    font-weight: bold;
+    color: var(--high-text);
+    cursor: pointer;
+    list-style: none;           /* Cache la flèche d'origine du navigateur */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    display: none;              /* Sécurité pour masquer la flèche sur Safari/Chrome */
+}
+
+/* Le bloc de texte qui se dévoile */
+details p {
+    background-color: var(--background); /* Fond blanc interne pour détacher le texte */
+    margin: 0 !important;
+    padding: 20px !important;
+    border-top: 1px solid var(--ui-border);
+    color: var(--high-text) !important;
+    line-height: 1.5 !important;
+}
+
+
+/*Bento*/
+/* ==========================================================================
+   BENTO LAYOUT (REMPLISSAGE INTELLIGENT DE L'ESPACE)
+   ========================================================================== */
+
+/* Conteneur principal sous la Hero Section */
+.bento-layout {
+    max-width: 1000px; /* Largeur généreuse mais contrôlée */
+    margin: 4rem auto; /* Espace sous l'image Hero */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espace entre les étages de cartes */
+}
+
+/* Grille pour mettre À propos et Formations côte à côte */
+.bento-grid-top {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* La carte "À propos" est un peu plus large */
+    gap: 30px;
+}
+
+/* Le design des "cartes" (Les fameuses boîtes Bento) */
+.bento-card {
+    background-color: var(--ui-backgroung); /* Ton rose/blanc cassé */
+    border: 1px solid var(--ui-border);
+    border-radius: 16px; /* Bords bien arrondis et modernes */
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(100, 23, 35, 0.04); /* Légère ombre pour détacher du fond */
+}
+
+/* Variante pour la section compétence (pas de fond pour laisser respirer les logos) */
+.bento-card.no-bg {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+}
+
+/* Typographie à l'intérieur des cartes */
+.bento-card h2 {
+    color: var(--high-text);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.bento-card p {
+    color: var(--high-text);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* Nettoyage de la liste des formations */
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.clean-list li {
+    color: var(--high-text);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+}
+
+/*Compétences*/
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribue les compétences de manière homogène */
+    align-items: center;
+    gap: 30px;
+    margin-top: 1.5rem;
+    padding: 10px 0;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 80px;
+}
+
+.skill-item img {
+    width: 65px;             /* Taille uniforme et élégante pour tous les logos */
+    height: 65px;
+    object-fit: contain;     /* Empêche toute déformation */
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol : le logo reprend sa couleur vive et monte légèrement */
+.skill-item:hover img {
+    transform: translateY(-10px);
+}
+
+.skill-item span {
+    font-size: 0.85rem;
+    color: var(--high-text);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    opacity: 0.85;
 }
