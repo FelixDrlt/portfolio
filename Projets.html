@@ -1,3 +1,4 @@
+/*Mettre la durée et non la date du projet*/
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,51 +9,86 @@
 </head>
 <body>
     <header>
-        <nav>
-            <img src="..." alt="Photo">
-            <h1>Projets</h1>
-            <ul class="menu">
-                <li><a href="Acceuil.html">Acceuil</a></li>
-                <li><a href="Projets.html">Projets</a></li>
-                <li><a href="Contact.html">Me Contacter</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <div class="nav-brand">
+            <img src="Pictures/pfp.png" alt="Photo personnelle">
+            
+            <h1 class="name_nav">
+                <span>Félix</span>
+                <span>Drault</span>
+            </h1>
+        </div>
+
+        <ul class="menu">
+            <li><a href="Acceuil.html"><img src="Icons/home-01-stroke-rounded.svg" alt="">Accueil</a></li>
+                <li><a href="Projets.html"><img src="Icons/code-folder-stroke-rounded.svg" alt="">Projets</a></li>
+                <li><a href="Contact.html"><img src="Icons/mail-01-stroke-rounded.svg" alt="">Me Contacter</a></li>
+        </ul>
+    </nav>
     </header>
 
-    <main>
-        <article class="Chatbot_card">
-            <img src="" alt="Photo du projet Chatbot">
-            <h1>Chatbot Culture Générale</h1>
-            <p class="Outil">Java</p>
-            <p class="Outil">Git</p>
-            <p class="Date">01/2026</p>
-            <a href="ESP_Chatbot.html">En savoir plus</a>
+    <main class="portfolio-section">
+    <h1 class="section-title">Projets</h1>
+
+    <div class="projects-container">
+        <article class="project-card">
+            <div class="card-img-placeholder">
+                <img src="" alt="Photo du projet Chatbot">
+            </div>
+            <div class="project-content">
+                <h2>Chatbot Culture Générale</h2>
+                <div class="tags">
+                    <span class="outil">Java</span>
+                    <span class="outil">Git</span>
+                </div>
+                <p class="date">01/2026</p>
+                <a href="ESP_Chatbot.html" class="btn">En savoir plus</a>
+            </div>
         </article>
 
-        <article class="BaseDonnee_card">
-            <img src="" alt="Photo du projet Base de données">
-            <h1>Création d'une base de données</h1>
-            <p class="Outil">PostgreSQL</p>
-            <p class="Date">12/2025</p>
-            <a href="ESP_BD.html">En savoir plus</a>
+        <article class="project-card">
+            <div class="card-img-placeholder">
+                <img src="" alt="Photo du projet Base de données">
+            </div>
+            <div class="project-content">
+                <h2>Création d'une base de données</h2>
+                <div class="tags">
+                    <span class="outil">PostgreSQL</span>
+                </div>
+                <p class="date">12/2025</p>
+                <a href="ESP_BD.html" class="btn">En savoir plus</a>
+            </div>
         </article>
 
-        <article class="SiteOrange_card">
-            <img src="" alt="Photo du projet Base de données">
-            <h1>Création d'un site web (TITRE A REVOIR)</h1>
-            <p class="Outil">HTML</p>
-            <p class="Outil">CSS</p>
-            <p class="Date">11/2025</p>
-            <a href="ESP_Orange.html">En savoir plus</a>
+        <article class="project-card">
+            <div class="card-img-placeholder">
+                <img src="" alt="Photo du projet Base de données">
+            </div>
+            <div class="project-content">
+                <h2>Création d'un site web (TITRE A REVOIR)</h2>
+                <div class="tags">
+                    <span class="outil">HTML</span>
+                    <span class="outil">CSS</span>
+                </div>
+                <p class="date">11/2025</p>
+                <a href="ESP_Orange.html" class="btn">En savoir plus</a>
+            </div>
         </article>
 
-        <article class="InstPoste_card">
-            <img src="" alt="Photo du projet installation de poste linux">
-            <h1>Installation d'un poste Linux</h1>
-            <p class="Outil">Linux</p>
-            <p class="Date">11/2025</p>
-            <a href="ESP_InstPoste.html">En savoir plus</a>
-        </article>
+        <article class="project-card">
+            <div class="card-img-placeholder">
+                <img src="" alt="Photo du projet installation de poste linux">
+            </div>
+            <div class="project-content">
+                <h2>Installation d'un poste Linux</h2>
+                <div class="tags">
+                    <span class="outil">Linux</span>
+                </div>
+                <p class="date">11/2025</p>
+                <a href="ESP_InstPoste.html" class="btn">En savoir plus</a>
+            </div>
+        </article> 
+    </div>
     </main>
     
 </body>

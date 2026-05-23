@@ -10,6 +10,11 @@
     --high-text:#641723;
 }
 
+.name-title{
+    margin-top: ;
+    font-size: 38;
+}
+
 p{
     color: var(--low-text);
 }
@@ -24,29 +29,99 @@ body{
     padding: 0px;
 }
 
-nav{
+/* --- BARRE DE NAVIGATION FIXE (PLUS FINE) --- */
+nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
+    
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+    
+    /* MODIFICATIONS ICI : Réduction du padding vertical (6px au lieu de 10px/15px) */
+    padding: 6px 4rem; 
+    box-sizing: border-box;
 }
 
-.menu{
+/* Conteneur logo + photo */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Ta photo de profil (Plus petite pour réduire la hauteur du nav) */
+nav img {
+    width: 35px;  /* Réduit de 45px à 35px */
+    height: 35px; /* Réduit de 45px à 35px */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Ton nom (Ajustement de la taille) */
+.name_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.05;
+    margin: 0;
+    font-size: 1.05rem; /* Légèrement réduit pour suivre la finesse du nav */
+    color: var(--high-text);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- LE MENU DE NAVIGATION --- */
+.menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-.menu li{
-    margin: 15px;
+.menu li {
     list-style: none;
+    margin: 0;
 }
 
-.menu li a{
+.menu li a {
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Espace légèrement resserré entre l'icône et le texte */
+    color: var(--high-text);
+    font-size: 0.95rem; /* Taille de police propre et lisible */
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* --- ICÔNES PROPORTIONNELLES AU TEXTE --- */
+/* Si tu insères tes icônes via des balises <img> */
+.menu li a img {
+    width: 18px;  /* Taille parfaite pour accompagner un texte de ~15px */
+    height: 18px;
+    display: block;
+}
+
+/* Si tu as injecté directement les codes <svg> dans ton HTML */
+.menu li a svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.menu li a:hover {
+    color: var(--low-text);
 }
 
 .titreAccueil{
@@ -66,4 +141,197 @@ summary{
 
 details[open] summary .icon {
     transform: rotate(45deg);
+}
+
+/*Card*/
+/* Style global de la section */
+.portfolio-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+}
+
+/* Placement propre du titre Projets */
+.section-title {
+    color: var(--high-text);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--ui-border);
+    padding-bottom: 0.5rem;
+}
+
+/* Grille pour aligner les cartes sans chevauchement */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Design de la carte */
+.project-card {
+    background: #ffffff; /* Fond blanc pur pour détacher la carte du fond de page */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(100, 23, 35, 0.05); /* Légère ombre avec une touche de high-text */
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Effet au survol de la carte */
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ui-over-border);
+    box-shadow: 0 8px 15px rgba(100, 23, 35, 0.1);
+}
+
+/* Gestion de la zone image (évite les bugs si src est vide) */
+.card-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: var(--ui-background); /* Utilisation de ton fond d'UI */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenu textuel interne */
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Titre du projet */
+.project-content h2 {
+    font-size: 1.3rem;
+    color: var(--high-text);
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+/* Outils / Badges */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.outil {
+    background-color: var(--ui-background);
+    color: var(--low-text);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Date */
+.date {
+    font-size: 0.9rem;
+    color: var(--low-text);
+    opacity: 0.8; /* Légèrement adouci pour la hiérarchie visuelle */
+    margin: 0 0 1.5rem 0;
+}
+
+/* Bouton En savoir plus */
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--ui-background);
+    color: var(--high-text);
+    border: 1px solid var(--ui-border);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: auto; /* Aligne le bouton en bas de la carte */
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* États du bouton basés sur tes variables */
+.btn:hover {
+    background-color: var(--ui-hover);
+    border-color: var(--ui-over-border);
+}
+
+.btn:active {
+    background-color: var(--ui-active);
+}
+
+/*hero-page*/
+/* --- SECTION HERO (BANNIÈRE IMMERSIVE) --- */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Prend 70% de la hauteur de l'écran (ajuste à 100vh si tu veux tout l'écran) */
+    margin-top: 0px; /* Aligne le haut sous ton menu fixe pour ne pas le masquer */
+    
+    /* REMPLACE ICI PAR LE CHEMIN DE TON IMAGE */
+    background-image: linear-gradient(rgba(255, 252, 252, 0.2), rgba(100, 23, 35, 0.4)), url('Pictures/hero_page.jpg');
+    
+    background-size: cover; /* Force l'image à couvrir tout l'espace sans se déformer */
+    background-position: center; /* Centre l'image dans l'encadré */
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Conteneur textuel au centre */
+.hero-content {
+    background-color: rgba(254, 235, 236, 0.75); /* var(--ui-background) avec de la transparence (0.75) */
+    padding: 2rem 3rem;
+    border-radius: 50px; /* Effet de capsule comme sur ton exemple */
+    border: 1px solid var(--ui-border);
+    backdrop-filter: blur(5px); /* Floute légèrement l'image derrière la capsule (effet très moderne) */
+    max-width: 80%;
+}
+
+/* Titre principal dans l'image */
+.hero-title {
+    font-family: 'Georgia', serif; /* Tu peux changer la police pour lui donner du caractère */
+    font-size: 3.5rem;
+    color: var(--high-text) !important; /* Force ta couleur rouge sombre */
+    margin: 0 0 0.5rem 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Sous-titre dans l'image */
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--high-text) !important;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* --- AJUSTEMENT DU RESTE DE LA PAGE --- */
+
+/* Pour que ton contenu sous la photo soit propre et centré */
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Comme tu as une grande photo maintenant, on réduit la marge du "À propos" */
+.titreAccueil {
+    margin-top: 0px !important; 
 }
