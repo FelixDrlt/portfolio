@@ -758,21 +758,22 @@ details p {
 
 /* Bouton envoyer modernisé aux couleurs de ton site */
 .btn-submit {
-    background-color: var(--low-text);
-    color: var(--background);
+    background-color: var(--background);
+    color: var(--high-text);
     border: none;
     padding: 14px 24px;
     border-radius: 8px;
     font-weight: bold;
     font-size: 0.95rem;
     cursor: pointer;
+    border: 1px solid var(--border);
     transition: background-color 0.2s ease, transform 0.1s ease;
     width: 100%;
     margin-top: 10px;
 }
 
 .btn-submit:hover {
-    background-color: var(--high-text);
+    background-color: var(--ui-hover);
 }
 
 .btn-submit:active {
@@ -867,4 +868,44 @@ details p {
     -moz-user-select: none;    
     -ms-user-select: none;     
     user-select: none;
+}
+
+/*Page confirmation envoi*/
+.success-layout {
+    max-width: 600px;
+    margin: 180px auto 4rem auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Force la carte à bien se structurer en colonne */
+.success-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.success-title {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--high-text);
+}
+
+.success-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--high-text);
+}
+
+/* Ajuste la taille du bouton de retour pour qu'il ne s'étire pas */
+.btn-success-home {
+    display: inline-block;
+    width: max-content;
+    margin-top: 20px;
 }
