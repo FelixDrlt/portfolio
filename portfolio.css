@@ -196,7 +196,7 @@ details[open] summary .icon {
 .project-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:contain;
 }
 
 /* Contenu textuel interne */
@@ -550,7 +550,7 @@ details p {
 
 /* Carte média / image */
 .project-media-card {
-    background-color: var(--ui-backgroung);
+    background-color: var(--background);
     border: 1px solid var(--ui-border);
     border-radius: 16px;
     overflow: hidden;
@@ -563,7 +563,7 @@ details p {
 .project-media-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:contain;
 }
 
 .project-icon-placeholder {
