@@ -10,9 +10,6 @@
     --high-text:#641723;
 }
 
-.dark-theme {   
-}
-
 p{
     color: var(--low-text);
 }
