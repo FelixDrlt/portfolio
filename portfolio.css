@@ -24,7 +24,7 @@ body{
     padding: 0px;
 }
 
-/* --- BARRE DE NAVIGATION FIXE (PLUS FINE) --- */
+/* BARRE DE NAV */
 nav {
     display: flex;
     flex-direction: row;
@@ -39,8 +39,7 @@ nav {
     
     background-color: var(--background);
     border-bottom: 1px solid var(--border);
-    
-    /* MODIFICATIONS ICI : Réduction du padding vertical (6px au lieu de 10px/15px) */
+
     padding: 6px 4rem; 
     box-sizing: border-box;
 }
@@ -52,29 +51,26 @@ nav {
     gap: 12px;
 }
 
-/* Ta photo de profil (Plus petite pour réduire la hauteur du nav) */
 nav img {
-    width: 35px;  /* Réduit de 45px à 35px */
-    height: 35px; /* Réduit de 45px à 35px */
+    width: 35px;  
+    height: 35px; 
     border-radius: 50%;
     object-fit: cover;
 }
 
-/* Ton nom (Ajustement de la taille) */
 .nom-nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     line-height: 1.05;
     margin: 0;
-    font-size: 1.05rem; /* Légèrement réduit pour suivre la finesse du nav */
+    font-size: 1.05rem;
     color: var(--high-text);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* --- LE MENU DE NAVIGATION --- */
 .menu {
     display: flex;
     flex-direction: row;
@@ -93,22 +89,19 @@ nav img {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 6px; /* Espace légèrement resserré entre l'icône et le texte */
+    gap: 6px; 
     color: var(--high-text);
-    font-size: 0.95rem; /* Taille de police propre et lisible */
+    font-size: 0.95rem; 
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
-/* --- ICÔNES PROPORTIONNELLES AU TEXTE --- */
-/* Si tu insères tes icônes via des balises <img> */
 .menu li a img {
-    width: 18px;  /* Taille parfaite pour accompagner un texte de ~15px */
+    width: 18px; 
     height: 18px;
     display: block;
 }
 
-/* Si tu as injecté directement les codes <svg> dans ton HTML */
 .menu li a svg {
     width: 18px;
     height: 18px;
@@ -134,8 +127,7 @@ details[open] summary .icone {
     transform: rotate(45deg);
 }
 
-/*Card*/
-/* Style global de la section */
+/*Carte*/
 .section-portfolio {
     max-width: 1200px;
     margin: 0 auto;
@@ -144,7 +136,6 @@ details[open] summary .icone {
     background-color: var(--background);
 }
 
-/* Placement propre du titre Projets */
 .titre-section {
     color: var(--high-text);
     font-size: 2.5rem;
@@ -153,26 +144,25 @@ details[open] summary .icone {
     padding-bottom: 0.5rem;
 }
 
-/* Grille pour aligner les cartes sans chevauchement */
 .conteneur-projets {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-/* Design de la carte */
+/* Design carte */
 .carte-projet {
-    background: #ffffff; /* Fond blanc pur pour détacher la carte du fond de page */
+    background: #ffffff; 
     border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(100, 23, 35, 0.05); /* Légère ombre avec une touche de high-text */
+    box-shadow: 0 4px 6px rgba(100, 23, 35, 0.05); 
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
-/* Effet au survol de la carte */
+/* Survol carte */
 .carte-projet:hover {
     transform: translateY(-5px);
     border-color: var(--ui-over-border);
@@ -183,7 +173,7 @@ details[open] summary .icone {
 .espace-image {
     width: 100%;
     height: 180px;
-    background-color: var(--ui-background); /* Utilisation de ton fond d'UI */
+    background-color: var(--ui-background); 
     display: flex;
     align-items: center;
     justify-content: center;
